@@ -1,0 +1,40 @@
+code {
+  margin: 0 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  background-color: $color-code-background;
+}
+
+pre {
+  margin: 1.5rem 0.5rem 3rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid $color-code-border;
+  background-color: $color-code-background;
+  font-size: $font-size-website-default + 0.2rem;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+
+  span {
+    padding: 0.25rem 2rem;
+    position: relative;
+    top: -1.2rem;
+    left: -1rem;
+    background-color: $color-code-name;
+    border-radius: 0.5rem 0 0 0;
+    font-weight: bold;
+    font-size: $font-size-website-default - 0.2rem;
+    color: $color-white;
+  }
+}
+
+span.code {
+  background-color: $color-code-inline;
+  border-radius: 2px;
+  margin: 0 5px 0 1px;
+  padding: 1px 6px 1px 5px;
+  font-family: $font-code-inline;
+  font-size: $font-size-website-default;
+}

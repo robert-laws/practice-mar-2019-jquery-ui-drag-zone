@@ -1,0 +1,36 @@
+{
+  "name": "practice-mar-2019-jquery-ui-drag-zone",
+  "version": "1.0.0",
+  "description": "Practice implementing a drag and drop with sorting JQuery UI page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "default": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robert-laws/practice-mar-2019-jquery-ui-drag-zone.git"
+  },
+  "keywords": [
+    "jquery",
+    "jqueryui"
+  ],
+  "author": "Robert Laws",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robert-laws/practice-mar-2019-jquery-ui-drag-zone/issues"
+  },
+  "homepage": "https://github.com/robert-laws/practice-mar-2019-jquery-ui-drag-zone#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

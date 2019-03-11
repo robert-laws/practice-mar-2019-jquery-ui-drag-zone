@@ -1,0 +1,18 @@
+.toc {
+  // Section for TOC
+  margin-top: 2rem;
+
+  h4 {
+    // TOC title
+    margin-bottom: -1rem;
+  }
+
+  &__list {
+    // unordered list
+  }
+
+  &__list-item {
+    // individual item in TOC
+    margin-left: 3rem;
+  }
+}

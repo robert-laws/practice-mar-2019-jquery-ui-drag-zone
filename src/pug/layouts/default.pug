@@ -1,0 +1,15 @@
+doctype html
+html
+  include ../includes/head.pug
+  
+  body
+    include ../mixins/syntax.pug
+    include ../includes/header.pug
+
+    block content
+
+    include ../includes/footer.pug
+
+    script(src="scripts/vendor/jquery.js")
+    script(src="scripts/vendor/jquery-ui.js")
+    //- script(src="scripts/main.js")

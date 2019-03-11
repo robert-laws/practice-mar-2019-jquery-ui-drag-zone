@@ -1,0 +1,72 @@
+// PAGE LAYOUT GLOBALS
+body {
+  line-height: 1.65;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.2rem 0 0.3rem 0;
+}
+
+h1 {
+  font-size: $font-h1-text-size;
+}
+
+h2 {
+  font-size: $font-h2-text-size;
+}
+
+h3 {
+  font-size: $font-h3-text-size;
+}
+
+h4 {
+  font-size: $font-h4-text-size;
+}
+
+h5 {
+  font-size: $font-h5-text-size;
+}
+
+h6 {
+  font-size: $font-h6-text-size;
+}
+
+p {
+  font-size: $font-size-website-default;
+}
+
+ul, ol {
+  margin-left: 3rem;
+
+  li {
+    font-size: $font-size-website-default;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $color-link-default;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-link-hover;
+  }
+}
+
+hr {
+  margin: 2rem 0;
+  opacity: 0.25;
+}
+
+div {
+  font-size: $font-size-website-default;
+}

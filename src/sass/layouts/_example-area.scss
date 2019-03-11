@@ -1,0 +1,39 @@
+.example-area {
+  flex: 1;
+  
+  margin: 1rem;
+  padding: 1rem 1rem 2rem;
+  border: 1px solid lighten($color-primary, 10%);
+
+  h6 {
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid lighten($color-primary, 10%);
+    margin: 0 0 2rem;
+  }
+
+  &__samples {
+    // area for sample code
+    padding: 0 3rem;
+
+    h6 {
+      border: none;
+      margin: 1rem 0 1rem -2rem;
+      padding: 0;
+    }
+
+    button {
+      margin: 1rem 0;
+      padding: 1rem 2rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    #box {
+      position: absolute;
+      height: 4rem;
+      width: 4rem;
+      background-color: lighten($color-secondary, 25%);
+      border: 1px solid $color-primary;
+    }
+  }
+}
