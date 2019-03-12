@@ -4,18 +4,32 @@ block content
   main
     h1 Sortable
 
+    button#get-items Get Items
+
     section.sort-zone
       section.sort-zone__left
         ul#select-zone.connect-list
-          li Item #1
-          li Item #2
-          li Item #3
-          li Item #4
-          li Item #5
+          li(id="item1") 
+            span.sort-handle Handle
+            p Item #1
+          li(id="2") 
+            span.sort-handle Handle
+            p Item #2
+          li(id="item3") 
+            span.sort-handle Handle
+            p Item #3
+          li(id="4") 
+            span.sort-handle Handle
+            p Item #4
+          li(id="5") 
+            span.sort-handle Handle
+            p Item #5
 
 
       section.sort-zone__right
         ul#drop-zone.connect-list
-          li Item #6
+          //- li
+          //-   span.sort-handle Handle
+          //-   p Item #6
 
 
