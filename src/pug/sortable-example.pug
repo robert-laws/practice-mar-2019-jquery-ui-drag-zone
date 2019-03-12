@@ -1,0 +1,21 @@
+extends layouts/default.pug
+
+block content
+  main
+    h1 Sortable
+
+    section.sort-zone
+      section.sort-zone__left
+        ul#select-zone.connect-list
+          li Item #1
+          li Item #2
+          li Item #3
+          li Item #4
+          li Item #5
+
+
+      section.sort-zone__right
+        ul#drop-zone.connect-list
+          li Item #6
+
+

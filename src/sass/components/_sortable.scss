@@ -1,0 +1,33 @@
+.sort-zone {
+  display: flex;
+  min-height: 100vh;
+
+  &__left {
+    flex: 1;
+
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  &__right {
+    flex: 1;
+
+    border: 2px dashed #555;
+    border-radius: 10px;
+    margin: 1rem;
+  }
+}
+
+.connect-list {
+  list-style: none;
+  margin-left: 0;
+  min-height: 100vh;
+
+  li {
+    margin: 1rem;
+    padding: 1rem;
+    color: $color-white;
+    background-color: lighten($color-primary, 20%);
+  }
+}
