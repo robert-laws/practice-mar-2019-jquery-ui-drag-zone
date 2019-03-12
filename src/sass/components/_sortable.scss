@@ -12,6 +12,8 @@
       padding: 1rem;
       color: $color-white;
       background-color: lighten($color-secondary, 20%);
+      transition: transform .25s ease-in-out;
+      transition: box-shadow .25s ease-in-out;
 
       span {
         background-color: lightblue;
@@ -19,6 +21,17 @@
         display: block;
         padding: 0 0.5rem;
       }
+    }
+
+    li.ui-sortable-helper {
+      background-color: lighten($color-secondary, 30%);;
+      box-shadow: 0 0 8px rgba(53,41,41, .8);
+      transform: scale(1.015);
+      z-index: 100;
+    }
+    li.ui-sortable-placeholder {
+      background-color: lighten($color-secondary, 20%);;
+      box-shadow: inset 0 0 10px #000000;
     }
   }
 
