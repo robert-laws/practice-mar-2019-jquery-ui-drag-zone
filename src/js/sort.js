@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var sortedIDs = [];
+
   $("#select-zone, #drop-zone").sortable({
     connectWith: ".connect-list",
     cursor: "pointer",
@@ -9,10 +10,7 @@ $(document).ready(function() {
   }).disableSelection();
 
   $("#get-items").click(function() {
-    var sortedIDs = $( "#drop-zone" ).sortable( "toArray" );
+    var sortedIDs = $("#drop-zone").sortable("toArray");
     alert(sortedIDs);
   });
 });
-
-
-
