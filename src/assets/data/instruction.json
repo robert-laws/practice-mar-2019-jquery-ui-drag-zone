@@ -1,0 +1,16 @@
+{
+  [
+    "title":"",
+    "description":"",
+    "learning_outcomes":[
+      "outcome 1",
+      "outcome 2",
+      "outcome 3"
+    ],
+    "activities": [
+      "activity 1",
+      "activity 2",
+      "activity 3"
+    ]
+  ]
+}
