@@ -21,7 +21,16 @@
         display: block;
         padding: 0 0.5rem;
       }
+
+      a:link, a:visited {
+        color: $color-white;
+      }
+
+      a:hover, a:active {
+        color: $color-primary;
+      }
     }
+    
 
     li.ui-sortable-helper {
       background-color: lighten($color-secondary, 30%);;
