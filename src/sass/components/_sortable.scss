@@ -29,6 +29,11 @@
       a:hover, a:active {
         color: $color-primary;
       }
+
+      input {
+        width: 50px;
+        padding: 0 1rem;
+      }
     }
     
 

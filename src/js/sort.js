@@ -26,7 +26,7 @@ $(document).ready(function() {
   }).disableSelection();
 
   $("#get-items").click(function() {
-    var sortedIDs = $("#drop-zone").sortable("toArray");
+    var sortedIDs = $("#drop-zone").sortable("toArray", {attribute: "data-custom"});
     console.log(sortedIDs);
     if(sortedIDs.length != 0) {
       alert(sortedIDs);
@@ -34,6 +34,8 @@ $(document).ready(function() {
       alert('no selections')
     }
   });
+
+
 });
 
 $.getJSON("assets/data/instruction.json")
@@ -48,14 +50,18 @@ $.getJSON("assets/data/instruction.json")
       var time = unit.default_time;
       var outcomes = "";
       var assessment = "";
+
       unit.learning_outcomes.forEach(function(outcome) {
         outcomes += "<li>" + outcome + "</li>"
       });
+
       unit.activities.forEach(function(activity) {
         assessment += "<li>" + activity + "</li>"
       });
-      var modal = "<p><strong>Brief Description:</strong> " + description + "</p><p><strong>Learning Outcomes</strong> (students will be able to:)<br><ul>" + outcomes + "</ul></p><p><strong>Activities/Assessment</strong><br><ul>" + assessment + "</ul></p>"
-      var dragItem = $("<li id='" + id + "'><span class='sort-handle'>" + title + "</span><p>" + description + "</p><p>" + time + "</p><p><a id='item" + id + "' href='#'>More Information</a></p></li><div id='dialog" + id + "' title='" + title + "'><p>" + modal + "</p></div>");
+
+      var modal = "<p><strong>Brief Description:</strong> " + description + "</p><p><strong>Learning Outcomes</strong> (students will be able to:)<br><ul>" + outcomes + "</ul></p><p><strong>Activities/Assessment</strong><br><ul>" + assessment + "</ul></p>";
+      
+      var dragItem = $("<li data-custom='" + id + "--" + time + "' id='" + id + "'><span class='sort-handle'>" + title + "</span><p>" + description + "</p><input class='time-input" + id + "' type='text' data-id='" + id + "' data-value='" + time + "' value='" + time + "' /><p>" + time + "</p><p><a id='item" + id + "' href='#'>More Information</a></p></li><div id='dialog" + id + "' title='" + title + "'><p>" + modal + "</p></div>");
 
       // ajaxArea.append(dragItem);
       $("ul#select-zone").append(dragItem);
@@ -70,6 +76,12 @@ $.getJSON("assets/data/instruction.json")
       $("#item" + id).click(function(event) {
         event.preventDefault();
         $("#dialog" + id).dialog("open");
+      });
+
+      $(".time-input" + id).blur(function() {
+        var newDataId = $(this).attr("data-id") + "--" + $(this).val();
+        console.log(newDataId);
+        $(this).parent().attr("data-custom", newDataId);
       });
 
       itemNumber++;
