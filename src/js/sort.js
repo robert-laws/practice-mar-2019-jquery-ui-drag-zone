@@ -35,7 +35,16 @@ $(document).ready(function() {
     }
   });
 
-
+  $("#submit-class").click(function() {
+    var selections = $("#drop-zone").sortable("toArray", {attribute: "data-custom"});
+    if(selections.length != 0) {
+      var url = "class-form.html?c=" + selections.join('+');
+      // console.log(url);
+      $(location).attr('href', url);
+    } else {
+      alert('no selections')
+    }
+  })
 });
 
 $.getJSON("assets/data/instruction.json")
@@ -61,7 +70,7 @@ $.getJSON("assets/data/instruction.json")
 
       var modal = "<p><strong>Brief Description:</strong> " + description + "</p><p><strong>Learning Outcomes</strong> (students will be able to:)<br><ul>" + outcomes + "</ul></p><p><strong>Activities/Assessment</strong><br><ul>" + assessment + "</ul></p>";
       
-      var dragItem = $("<li data-custom='" + id + "--" + time + "' id='" + id + "'><span class='sort-handle'>" + title + "</span><p>" + description + "</p><input class='time-input" + id + "' type='text' data-id='" + id + "' data-value='" + time + "' value='" + time + "' /><p>" + time + "</p><p><a id='item" + id + "' href='#'>More Information</a></p></li><div id='dialog" + id + "' title='" + title + "'><p>" + modal + "</p></div>");
+      var dragItem = $("<li data-custom='" + id + "-" + time + "' id='" + id + "'><span class='sort-handle'>" + title + "</span><p>" + description + "</p><input class='time-input" + id + "' type='text' data-id='" + id + "' data-value='" + time + "' value='" + time + "' /><p>" + time + "</p><p><a id='item" + id + "' href='#'>More Information</a></p></li><div id='dialog" + id + "' title='" + title + "'><p>" + modal + "</p></div>");
 
       // ajaxArea.append(dragItem);
       $("ul#select-zone").append(dragItem);
@@ -79,7 +88,7 @@ $.getJSON("assets/data/instruction.json")
       });
 
       $(".time-input" + id).blur(function() {
-        var newDataId = $(this).attr("data-id") + "--" + $(this).val();
+        var newDataId = $(this).attr("data-id") + "-" + $(this).val();
         console.log(newDataId);
         $(this).parent().attr("data-custom", newDataId);
       });
