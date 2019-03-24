@@ -1,4 +1,14 @@
 $(function() {
+  $("#course-date").datepicker({
+    showButtonPanel: true,
+    currentText: "Today"
+  });
+
+  $("#course-time").timepicker({ // built using jquery.timepicker - http://jonthornton.github.io/jquery-timepicker/
+    "scrollDefault": "now",
+    "step": 10
+  });
+
   var classUrl = window.location.href.slice(window.location.href.indexOf("=") + 1).split("+");
   var classCount = classUrl.length;
 
