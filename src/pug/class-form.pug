@@ -4,20 +4,31 @@ block content
   main
     h1 Review Class - Form
 
-    form#new-class
+    form(onsubmit="return false;" novalidate)#new-class
 
       label(for="faculty-name") Name
-      input(type="text")#faculty-name
+      input(type="text" name="name" class="validate-this" required)#faculty-name
 
       label(for="course-name") Course Name
-      input(type="text")#course-name
+      input(type="text" name="course" class="validate-this" required)#course-name
 
       br
 
       label(for="course-date") Course Date
-      input(type="text")#course-date
+      input(type="text" name="date" class="validate-this" required)#course-date
 
       label(for="course-time") Course Time
-      input(type="text")#course-time
+      input(type="text" name="time" class="validate-this" required)#course-time
 
-      #your-class
+      br
+
+      label(for="students") Course Time
+      input(type="text" name="students" class="validate-this" required)#students
+
+      input(type="hidden" name="selections")#selections
+
+      p#form-errors
+
+      input(type="submit" value="Submit Class")#class-submit
+
+    #your-class
