@@ -4,6 +4,17 @@
     $date = isset($_POST['date']) ? $_POST['date'] : null;
     $time = isset($_POST['time']) ? $_POST['time'] : null;
     $students = isset($_POST['students']) ? $_POST['students'] : null;
+
+    $selectionArr = [];
+
+    $selectionsArr = (explode("+", $selections));
+    $instructionArr = array();
+    
+    foreach ($selectionsArr as $value) {
+        $instruct = (explode("-", $value));
+        $unit = array('unit' => $instruct[0], 'minutes' => $instruct[1]);
+        array_push($instructionArr, $unit);
+    }
     
     $myFile = "../data/test-class.json";
     
@@ -12,7 +23,7 @@
 
     $next_id = count($array_data["classes"]) + 1;
 
-    $extra = array('id' => $next_id, 'instructor' => $name, 'course_title' => $course, 'date' => $date, 'time' => $time, 'students' => $students, 'instruction' => array(array('unit' => 3, 'minutes' => 25), array('unit' => 1, 'minutes' => 10)));  
+    $extra = array('id' => $next_id, 'instructor' => $name, 'course_title' => $course, 'date' => $date, 'time' => $time, 'students' => $students, 'instruction' => $instructionArr);  
     array_push($array_data["classes"], $extra);
     $final_data = json_encode($array_data);
     file_put_contents($myFile, $final_data);
