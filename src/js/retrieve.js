@@ -1,4 +1,9 @@
 $(function() {
+
+  $.ajaxSetup({ 
+    cache: false 
+  });
+  
   var classId = window.location.href.slice(window.location.href.indexOf("=") + 1);
 
   $("#class-id").text(classId);
@@ -29,7 +34,7 @@ $(function() {
           var classDetails = classItems[i].instruction;
           classDetails.forEach(function(item) {
             getUnitDetails(item.unit);
-          })          
+          });        
 
           break;
         } else {
