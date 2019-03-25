@@ -4,6 +4,8 @@ block content
   main
     h1 Review Class - Form
 
+    p(class="hidden-val")#saved-id
+
     form(onsubmit="return false;" novalidate)#new-class
 
       label(for="faculty-name") Name
@@ -22,7 +24,7 @@ block content
 
       br
 
-      label(for="students") Course Time
+      label(for="students") Number of Students
       input(type="text" name="students" class="validate-this" required)#students
 
       input(type="hidden" name="selections")#selections

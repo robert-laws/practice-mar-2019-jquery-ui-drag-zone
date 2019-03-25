@@ -11,6 +11,12 @@ $(function() {
   $.getJSON("assets/data/test-class.json")
     .done(function(items) {
       var classItems = items["classes"];
+
+      if(classId == 0) {
+        var len = classItems.length - 1;
+        classId = classItems[len].id;
+      }
+
       for(var i = 0; i < classItems.length; i++) {
         if(classItems[i].id === parseInt(classId)) {
           // alert("matched on id: " + classId);

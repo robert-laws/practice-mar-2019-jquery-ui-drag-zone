@@ -8,9 +8,9 @@ $(function() {
 
   $("#class-submit").click(function() {
     if(formValidate($(this))) {
-      var classId = saveClass();
-      if(classId > 0) {
-        $(location).attr("href", "confirmation.html?cid=" + classID);
+      var newId = saveClass();
+      if(newId > 0) {
+        $(location).attr("href", "confirmation.html?cid=" + newId);
       } else {
         console.log("class id was not saved.");
       }
@@ -65,7 +65,7 @@ function formValidate(element) {
 }
 
 function saveClass() {
-  var savedId = 0;
+  var res;
   var request;
   var $form = $("#new-class");
   var $inputs = $form.find("input");
@@ -73,21 +73,23 @@ function saveClass() {
   request = $.ajax({
     url: "../assets/form/build-class.php",
     type: "post",
-    data: serializedData
+    data: serializedData,
+    async: false
   });
 
   request.done(function (response, textStatus, jqXHR){
-    savedId = response;
     // Log a message to the console
     console.log("Success, it worked!");
+    res = response;
   });
 
   request.fail(function (jqXHR, textStatus, errorThrown){
     // Log the error to the console
     console.error(
-        "The following error occurred: " + textStatus, errorThrown
+      "The following error occurred: " + textStatus, errorThrown
     );
+    res = 0;
   });
 
-  return savedId;
+  return res;
 }
