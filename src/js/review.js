@@ -46,8 +46,6 @@ $(function() {
         }
       }
     })
-
-  
 });
 
 function formValidate(element) {
